@@ -108,10 +108,10 @@ void FusionEKF::ProcessMeasurement(const MeasurementPackage &measurement_pack) {
     }
 
     // Deal with the special case initialisation problems
-  if (fabs(ekf_.x_(0)) < EPS and fabs(ekf_.x_(1)) < EPS){
-    ekf_.x_(0) = EPS;
-    ekf_.x_(1) = EPS;
-  }
+    if (fabs(ekf_.x_(0)) < EPS and fabs(ekf_.x_(1)) < EPS){
+      ekf_.x_(0) = EPS;
+      ekf_.x_(1) = EPS;
+    }
 
     previous_timestamp_ = measurement_pack.timestamp_;
 
